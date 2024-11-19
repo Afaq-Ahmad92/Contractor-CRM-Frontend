@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useStateContext } from "../../context/store";
 import { IoCloseOutline } from "react-icons/io5";
-function DropdownMenu({ name, options, onChange }) {
+function DropdownMenu({ name, options, onChange, value }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const listRef = useRef(null);
@@ -36,7 +36,7 @@ function DropdownMenu({ name, options, onChange }) {
               text={option}
               onClick={() => {
                 setSelectedOptions((pre) => pre.filter((j, i) => i !== index));
-                onChange("remove", name, option);
+                onChange("remove", value, option);
               }}
             />
           ))
@@ -69,12 +69,12 @@ function DropdownMenu({ name, options, onChange }) {
                     e?.stopPropagation();
                     if (e?.target?.checked) {
                       pushOptions(option);
-                      onChange("add", name, option);
+                      onChange("add", value, option);
                     } else {
                       setSelectedOptions((pre) =>
                         pre.filter((j, i) => j !== option)
                       );
-                      onChange("remove", name, option);
+                      onChange("remove", value, option);
                     }
                   }}
                   name=""

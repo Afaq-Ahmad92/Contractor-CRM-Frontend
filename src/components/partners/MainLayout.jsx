@@ -18,6 +18,7 @@ const MainLayout = () => {
       groups: "Partners",
       status: "Pending",
       availability: "next four week",
+      partnertype: "Partners",
     },
     {
       name: "Aaron Asencio",
@@ -29,6 +30,7 @@ const MainLayout = () => {
       groups: "Partners",
       status: "Full onboarded",
       availability: "next twelve week",
+      partnertype: "Remote",
     },
     {
       name: "Amelia Stone",
@@ -40,6 +42,7 @@ const MainLayout = () => {
       groups: "VIP Partners",
       status: "Onboarding underway",
       availability: "next four week",
+      partnertype: "Partners",
     },
     {
       name: "Brandon Lee",
@@ -51,6 +54,7 @@ const MainLayout = () => {
       groups: "Associates",
       status: "Full onboarded",
       availability: "next two week",
+      partnertype: "Partners",
     },
     {
       name: "Catherine Cruz",
@@ -62,6 +66,7 @@ const MainLayout = () => {
       groups: "Partners",
       status: "Full onboarded",
       availability: "this week",
+      partnertype: "Contractor",
     },
     {
       name: "Daniel Young",
@@ -73,6 +78,7 @@ const MainLayout = () => {
       groups: "Partners",
       status: "Full onboarded",
       availability: "this week",
+      partnertype: "Remote",
     },
     {
       name: "Emily Brooks",
@@ -84,6 +90,7 @@ const MainLayout = () => {
       groups: "New Partners",
       status: "Pending",
       availability: "this week",
+      partnertype: "Partners",
     },
     {
       name: "Frank Gomez",
@@ -95,6 +102,7 @@ const MainLayout = () => {
       groups: "VIP Partners",
       status: "Full onboarded",
       availability: "next two week",
+      partnertype: "Remote",
     },
     {
       name: "Grace Scott",
@@ -106,6 +114,7 @@ const MainLayout = () => {
       groups: "Associates",
       status: "Onboarding underway",
       availability: "next six week",
+      partnertype: "Contractor",
     },
     {
       name: "Henry Butler",
@@ -117,6 +126,7 @@ const MainLayout = () => {
       groups: "Partners",
       status: "Full onboarded",
       availability: "this week",
+      partnertype: "Partners",
     },
   ];
 
@@ -129,10 +139,13 @@ const MainLayout = () => {
         if (!values || values.length === 0) return true;
         // Check if the partner's property value matches any value in the filter array
         values = values?.map((value) => value?.toLowerCase());
-        return values.includes(partner[key?.toLowerCase()]);
+        console.log(values, partner[key?.toLowerCase()], "items");
+        return values.includes(partner[key?.toLowerCase()]?.toLowerCase());
       });
     });
   };
+
+  console.log(filters, "filters");
 
   // Filtered partners
   const filteredPartners = filterPartners(partners, filters);

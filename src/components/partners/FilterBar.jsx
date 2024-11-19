@@ -12,14 +12,17 @@ const FiltersSection = () => {
   const filters = [
     {
       name: "Status",
+      value: "status",
       options: ["Onboarding underway", "Full onboarded", "Pending"],
     },
     {
       name: "Radius",
+      value: "radius",
       options: [],
     },
     {
       name: "Availability",
+      value: "availability",
       options: [
         "This week",
         "Next two week",
@@ -28,7 +31,11 @@ const FiltersSection = () => {
         "Next twelve week",
       ],
     },
-    { name: "Partner type", options: [] },
+    {
+      name: "Partner type",
+      value: "partnertype",
+      options: ["Partners", "Remote", "Contractor"],
+    },
     { name: "Tags", options: [] },
     { name: "Rank", options: [] },
     { name: "Skills", options: [] },
@@ -62,6 +69,7 @@ const FiltersSection = () => {
           <>
             <DropdownMenu
               name={filter?.name}
+              value={filter?.value}
               options={filter?.options}
               onChange={updateFilters}
             />
