@@ -19,6 +19,7 @@ const MainLayout = () => {
       status: "Pending",
       availability: "next four week",
       partnertype: "Partners",
+      tag: "Networking",
     },
     {
       name: "Aaron Asencio",
@@ -31,6 +32,7 @@ const MainLayout = () => {
       status: "Full onboarded",
       availability: "next twelve week",
       partnertype: "Remote",
+      tag: "Networking",
     },
     {
       name: "Amelia Stone",
@@ -43,6 +45,7 @@ const MainLayout = () => {
       status: "Onboarding underway",
       availability: "next four week",
       partnertype: "Partners",
+      tag: "Networking",
     },
     {
       name: "Brandon Lee",
@@ -55,6 +58,7 @@ const MainLayout = () => {
       status: "Full onboarded",
       availability: "next two week",
       partnertype: "Partners",
+      tag: "Networking",
     },
     {
       name: "Catherine Cruz",
@@ -67,6 +71,7 @@ const MainLayout = () => {
       status: "Full onboarded",
       availability: "this week",
       partnertype: "Contractor",
+      tag: "osp",
     },
     {
       name: "Daniel Young",
@@ -79,6 +84,7 @@ const MainLayout = () => {
       status: "Full onboarded",
       availability: "this week",
       partnertype: "Remote",
+      tag: "security",
     },
     {
       name: "Emily Brooks",
@@ -91,6 +97,7 @@ const MainLayout = () => {
       status: "Pending",
       availability: "this week",
       partnertype: "Partners",
+      tag: "Nuse call",
     },
     {
       name: "Frank Gomez",
@@ -103,6 +110,7 @@ const MainLayout = () => {
       status: "Full onboarded",
       availability: "next two week",
       partnertype: "Remote",
+      tag: "hospitality",
     },
     {
       name: "Grace Scott",
@@ -115,6 +123,7 @@ const MainLayout = () => {
       status: "Onboarding underway",
       availability: "next six week",
       partnertype: "Contractor",
+      tag: "locksmith",
     },
     {
       name: "Henry Butler",
@@ -127,6 +136,7 @@ const MainLayout = () => {
       status: "Full onboarded",
       availability: "this week",
       partnertype: "Partners",
+      tag: "Networking",
     },
   ];
 
