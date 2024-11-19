@@ -131,71 +131,68 @@ const PartnerCard = ({
        />
       {/* Options Menu */}
       {menu && (
-        <div
-          className="absolute   bg-white border rounded-lg shadow-lg w-72 z-[9999]"
-        >
-          <ul className="py-2 text-sm text-gray-700">
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <StarIcon className="text-gray-500 mr-2" /> Add Review
-            </li>
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <FavoriteIcon className="text-gray-500 mr-2" /> Add to Favorites
-            </li>
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <GroupIcon className="text-gray-500 mr-2" /> Add to Group
-            </li>
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <ShieldIcon className="text-gray-500 mr-2" /> Add to Insurance
-              Request
-            </li>
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <ListIcon className="text-gray-500 mr-2" /> Add to List
-            </li>
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <ArchiveIcon className="text-gray-500 mr-2" /> Archive
-            </li>
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <DescriptionIcon className="text-gray-500 mr-2" /> Create Contract
-            </li>
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <EditIcon className="text-gray-500 mr-2" /> Edit Profile
-              Information
-            </li>
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <SyncAltIcon className="text-gray-500 mr-2" /> Manage Workflows
-            </li>
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <DeleteIcon className="text-gray-500 mr-2" /> Remove
-            </li>
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <FeedbackIcon className="text-gray-500 mr-2" /> Request Feedback
-            </li>
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <ReplayIcon className="text-gray-500 mr-2" /> Resend Invitations
-            </li>
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <PreviewIcon className="text-gray-500 mr-2" /> Review Onboarding
-            </li>
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <AddTaskIcon className="text-gray-500 mr-2" /> Send Agreement for
-              Signing
-            </li>
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <DraftsIcon className="text-gray-500 mr-2" /> Send Email Login
-              Link
-            </li>
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <SendIcon className="text-gray-500 mr-2" /> Send Message
-            </li>
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <ShareIcon className="text-gray-500 mr-2" /> Share Profile
-            </li>
-          </ul>
-        </div>
-      )}
+  <div
+    className="absolute bg-white border rounded-lg shadow-lg w-72 z-[9999] left-3 max-h-80 overflow-y-auto"
+  >
+    <ul className="py-2 text-sm text-gray-700">
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <StarIcon className="text-gray-500 mr-2" /> Add Review
+      </li>
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <FavoriteIcon className="text-gray-500 mr-2" /> Add to Favorites
+      </li>
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <GroupIcon className="text-gray-500 mr-2" /> Add to Group
+      </li>
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <ShieldIcon className="text-gray-500 mr-2" /> Add to Insurance Request
+      </li>
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <ListIcon className="text-gray-500 mr-2" /> Add to List
+      </li>
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <ArchiveIcon className="text-gray-500 mr-2" /> Archive
+      </li>
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <DescriptionIcon className="text-gray-500 mr-2" /> Create Contract
+      </li>
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <EditIcon className="text-gray-500 mr-2" /> Edit Profile Information
+      </li>
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <SyncAltIcon className="text-gray-500 mr-2" /> Manage Workflows
+      </li>
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <DeleteIcon className="text-gray-500 mr-2" /> Remove
+      </li>
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <FeedbackIcon className="text-gray-500 mr-2" /> Request Feedback
+      </li>
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <ReplayIcon className="text-gray-500 mr-2" /> Resend Invitations
+      </li>
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <PreviewIcon className="text-gray-500 mr-2" /> Review Onboarding
+      </li>
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <AddTaskIcon className="text-gray-500 mr-2" /> Send Agreement for Signing
+      </li>
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <DraftsIcon className="text-gray-500 mr-2" /> Send Email Login Link
+      </li>
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <SendIcon className="text-gray-500 mr-2" /> Send Message
+      </li>
+      <li className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <ShareIcon className="text-gray-500 mr-2" /> Share Profile
+      </li>
+    </ul>
+  </div>
+)}
+
 
       {/* Partner Details */}
-      <div className="mt-[20px] flex flex-col gap-[4px] pt-[7px] w-[99%] items-center h-[230px] py-2 border-b-[0.5px]">
+      <div className="mt-[20px]  flex flex-col gap-[4px] pt-[7px] w-[99%] items-center h-[230px] mx py-2 border-b-[0.5px]">
         <img
           src={"/profile.avif"}
           alt={name}
