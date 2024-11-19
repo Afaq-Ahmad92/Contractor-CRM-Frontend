@@ -49,8 +49,40 @@ const FiltersSection = () => {
       ],
     },
     { name: "Rank", options: [] },
-    { name: "Skills", options: ["Networking", "Low voltage cabling"] },
-    { name: "Company Name", options: [] },
+    {
+      name: "Skills",
+      value: "skills",
+      options: [
+        "Networking",
+        "Low Voltage Cabling",
+        "Network Engineering",
+        "Wireless",
+        "Technical Support",
+        "Physical Installations",
+        "IT Security",
+      ],
+    },
+    {
+      name: "Company Name",
+      value: "company",
+      options: [
+        "TechCorp",
+        "Innovate Solutions",
+        "Global Dynamics",
+        "Zenith Enterprises",
+        "Quantum Leap Inc.",
+        "Nexus Group",
+        "Synergy Solutions",
+        "CyberShield Security",
+        "Pixel Perfect Designs",
+        "GreenTech Innovations",
+        "Evolve Consulting",
+        "FutureX Labs",
+        "CloudNine Services",
+        "DataZen Analytics",
+        "AI Frontier",
+      ],
+    },
   ];
 
   const updateFilters = (event, filter, value) => {
