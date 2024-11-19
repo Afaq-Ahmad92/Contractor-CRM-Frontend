@@ -3,7 +3,6 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import StarIcon from "@mui/icons-material/Star";
-import image from "../public/WhatsApp Image 2024-09-01 at 10.23.27_2c08229d.jpg";
 import { BsThreeDotsVertical } from "react-icons/bs";
 const PartnerCard = ({
   name,
@@ -32,11 +31,10 @@ const PartnerCard = ({
         className={` ${
           menu ? "block" : "hidden"
         }  bg-gray-800  absolute top-0 `}
-      >
-      </aside>
+      ></aside>
       <div className=" mt-[20px] flex flex-col gap-[4px] pt-[7px] w-[99%] items-center h-[230px] py-2 border-b-[0.5px]">
         <img
-          src={image}
+          src={"/profile.avif"}
           alt={name}
           className="w-24 h-24 rounded-[50%] object-cover "
         />

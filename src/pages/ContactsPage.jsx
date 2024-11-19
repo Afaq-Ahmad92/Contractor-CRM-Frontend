@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import MainLayout from "../components/MainLayout";
+import MainLayout from "../components/partners/MainLayout";
 import useApi from "../utils/useApi";
 const ContactsPage = () => {
   const { fetchData } = useApi();

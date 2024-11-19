@@ -5,9 +5,10 @@ import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import SaveIcon from "@mui/icons-material/Save";
 import SettingsIcon from "@mui/icons-material/Settings";
-import DropdownMenu from "./elements/filter";
-
+import DropdownMenu from "../elements/filter";
+import { usePartnersContext } from "./partnersContext";
 const FiltersSection = () => {
+  const { setFilters } = usePartnersContext();
   const filters = [
     {
       name: "Status",
@@ -21,13 +22,53 @@ const FiltersSection = () => {
     { name: "Skills", options: [] },
     { name: "Company Name", options: [] },
   ];
+  // function updateFilters(event, filter, value) {
+  //   if (event === "add") {
+  //     setFilters((prev) => ({
+  //       ...prev,
+  //       [filter]: Array.isArray(prev[filter])
+  //         ? [...prev[filter], value] // Push value into the existing array
+  //         : [value], // Initialize the array if it's not already an array
+  //     }));
+  //   } else {
+  //     setFilters((prev) => ({
+  //       ...prev,
+  //       [filter]: prev[filter]
+  //         ? prev[filter].filter((item) => item !== value)
+  //         : [], // Remove `value` if it exists
+  //     }));
+  //   }
+  // }
+  const updateFilters = (event, filter, value) => {
+    console.log(event, filter, value, "values");
+    // setFilters((prev) => {
+    //   const currentValues = Array.isArray(prev[filter]) ? prev[filter] : [];
+    //   if (event === "add") {
+    //     return {
+    //       ...prev,
+    //       [filter]: [...currentValues, value], // Add the value
+    //     };
+    //   } else if (event === "remove") {
+    //     return {
+    //       ...prev,
+    //       [filter]: currentValues.filter((item) => item !== value), // Remove the value
+    //     };
+    //   }
+    //   return prev; // Fallback for unsupported events
+    // });
+  };
+
   return (
     <div className="flex flex-wrap items-center p-4 rounded-lg ">
       {/* Filter Dropdowns */}
-      <div className="flex flex-wrap space-y-2 md:space-y-0 md:space-x-2 bg-red-700 max-w-fit  overflow-y-visible">
+      <div className="flex flex-wrap space-y-2 md:space-y-0 md:space-x-2  max-w-fit  overflow-y-visible">
         {filters.map((filter, index) => (
           <>
-            <DropdownMenu name={filter?.name} options={filter?.options} />
+            <DropdownMenu
+              name={filter?.name}
+              options={filter?.options}
+              onChange={updateFilters}
+            />
           </>
         ))}
       </div>

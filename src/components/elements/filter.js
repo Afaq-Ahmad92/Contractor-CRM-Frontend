@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useStateContext } from "../../context/store";
 import { IoCloseOutline } from "react-icons/io5";
-
-function DropdownMenu({ name, options }) {
+function DropdownMenu({ name, options, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const listRef = useRef(null);
@@ -41,7 +40,7 @@ function DropdownMenu({ name, options }) {
             />
           ))
         ) : (
-          <button className="p-4">{name}</button>
+          <button className="p-2">{name}</button>
         )}
       </div>
       {isOpen && (
@@ -67,11 +66,15 @@ function DropdownMenu({ name, options }) {
                   checked={selectedOptions?.find((opt) => opt === option)}
                   onChange={(e) => {
                     e?.stopPropagation();
-                    if (e?.target?.checked) pushOptions(option);
-                    else
+                    if (e?.target?.checked) {
+                      pushOptions(option);
+                      onChange("add", name, option);
+                    } else {
                       setSelectedOptions((pre) =>
                         pre.filter((j, i) => j !== option)
                       );
+                      onChange("remove", name, option);
+                    }
                   }}
                   name=""
                   id=""
@@ -89,7 +92,9 @@ export default DropdownMenu;
 
 const ButtonWithCancel = ({ text, onClick }) => {
   return (
-    <button className={`flex items-center gap-3 justify-between p-4`}>
+    <button
+      className={`flex items-center gap-3 justify-between p-2 bg-gray-200 rounded-lg`}
+    >
       <span>{text}</span>{" "}
       <span onClick={onClick}>
         <IoCloseOutline size={16} />
