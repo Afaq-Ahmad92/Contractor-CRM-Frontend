@@ -17,6 +17,7 @@ const MainLayout = () => {
       image: "/path/to/image1.jpg",
       groups: "Partners",
       status: "Pending",
+      availability: "next four week",
     },
     {
       name: "Aaron Asencio",
@@ -27,6 +28,7 @@ const MainLayout = () => {
       image: "/path/to/image2.jpg",
       groups: "Partners",
       status: "Full onboarded",
+      availability: "next twelve week",
     },
     {
       name: "Amelia Stone",
@@ -37,6 +39,7 @@ const MainLayout = () => {
       image: "/path/to/image3.jpg",
       groups: "VIP Partners",
       status: "Onboarding underway",
+      availability: "next four week",
     },
     {
       name: "Brandon Lee",
@@ -47,6 +50,7 @@ const MainLayout = () => {
       image: "/path/to/image4.jpg",
       groups: "Associates",
       status: "Full onboarded",
+      availability: "next two week",
     },
     {
       name: "Catherine Cruz",
@@ -57,6 +61,7 @@ const MainLayout = () => {
       image: "/path/to/image5.jpg",
       groups: "Partners",
       status: "Full onboarded",
+      availability: "this week",
     },
     {
       name: "Daniel Young",
@@ -67,6 +72,7 @@ const MainLayout = () => {
       image: "/path/to/image6.jpg",
       groups: "Partners",
       status: "Full onboarded",
+      availability: "this week",
     },
     {
       name: "Emily Brooks",
@@ -77,6 +83,7 @@ const MainLayout = () => {
       image: "/path/to/image7.jpg",
       groups: "New Partners",
       status: "Pending",
+      availability: "this week",
     },
     {
       name: "Frank Gomez",
@@ -87,6 +94,7 @@ const MainLayout = () => {
       image: "/path/to/image8.jpg",
       groups: "VIP Partners",
       status: "Full onboarded",
+      availability: "next two week",
     },
     {
       name: "Grace Scott",
@@ -97,6 +105,7 @@ const MainLayout = () => {
       image: "/path/to/image9.jpg",
       groups: "Associates",
       status: "Onboarding underway",
+      availability: "next six week",
     },
     {
       name: "Henry Butler",
@@ -107,6 +116,7 @@ const MainLayout = () => {
       image: "/path/to/image10.jpg",
       groups: "Partners",
       status: "Full onboarded",
+      availability: "this week",
     },
   ];
 
@@ -118,6 +128,7 @@ const MainLayout = () => {
         console.log(key, values, "keys");
         if (!values || values.length === 0) return true;
         // Check if the partner's property value matches any value in the filter array
+        values = values?.map((value) => value?.toLowerCase());
         return values.includes(partner[key?.toLowerCase()]);
       });
     });

@@ -14,31 +14,27 @@ const FiltersSection = () => {
       name: "Status",
       options: ["Onboarding underway", "Full onboarded", "Pending"],
     },
-    { name: "Radius", options: [] },
-    { name: "Availability", options: [] },
+    {
+      name: "Radius",
+      options: [],
+    },
+    {
+      name: "Availability",
+      options: [
+        "This week",
+        "Next two week",
+        "Next four week",
+        "Next six week",
+        "Next twelve week",
+      ],
+    },
     { name: "Partner type", options: [] },
     { name: "Tags", options: [] },
     { name: "Rank", options: [] },
     { name: "Skills", options: [] },
     { name: "Company Name", options: [] },
   ];
-  // function updateFilters(event, filter, value) {
-  //   if (event === "add") {
-  //     setFilters((prev) => ({
-  //       ...prev,
-  //       [filter]: Array.isArray(prev[filter])
-  //         ? [...prev[filter], value] // Push value into the existing array
-  //         : [value], // Initialize the array if it's not already an array
-  //     }));
-  //   } else {
-  //     setFilters((prev) => ({
-  //       ...prev,
-  //       [filter]: prev[filter]
-  //         ? prev[filter].filter((item) => item !== value)
-  //         : [], // Remove `value` if it exists
-  //     }));
-  //   }
-  // }
+
   const updateFilters = (event, filter, value) => {
     // console.log(event, filter, value, "values");
     setFilters((prev) => {

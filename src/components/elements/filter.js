@@ -34,9 +34,10 @@ function DropdownMenu({ name, options, onChange }) {
           selectedOptions?.map((option, index) => (
             <ButtonWithCancel
               text={option}
-              onClick={() =>
-                setSelectedOptions((pre) => pre.filter((j, i) => i !== index))
-              }
+              onClick={() => {
+                setSelectedOptions((pre) => pre.filter((j, i) => i !== index));
+                onChange("remove", name, option);
+              }}
             />
           ))
         ) : (
