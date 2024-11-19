@@ -49,7 +49,7 @@ const FiltersSection = () => {
       ],
     },
     { name: "Rank", options: [] },
-    { name: "Skills", options: [] },
+    { name: "Skills", options: ["Networking", "Low voltage cabling"] },
     { name: "Company Name", options: [] },
   ];
 
