@@ -306,6 +306,11 @@ const MainLayout = () => {
     return partners.filter((partner) => {
       return Object.entries(filters).every(([key, values]) => {
         if (!values || values.length === 0) return true;
+        if (typeof values === "string") {
+          return partner["name"]
+            ?.toLowerCase()
+            ?.includes(values?.toLowerCase());
+        }
         values = values.map((value) => value?.toLowerCase());
         const partnerValue = partner[key?.toLowerCase()];
         if (Array.isArray(partnerValue)) {

@@ -123,14 +123,18 @@ const FiltersSection = () => {
   );
 };
 const SearchSection = () => {
+  const { setFilters } = usePartnersContext();
   return (
-    <div className="flex items-center justify-between mt-2 md:mt-4 p-4 bg-gray-100 rounded-lg shadow-md">
+    <div className="flex items-center justify-between mt-2 md:mt-4 p-4  rounded-lg ">
       {/* Search Bar with Search Icon */}
       <TextField
         variant="outlined"
         size="small"
         placeholder="Search 1526 Partners"
-        className="w-full md:w-64"
+        className="w-full "
+        onChange={(e) =>
+          setFilters((pre) => ({ ...pre, name: e?.target?.value }))
+        }
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
