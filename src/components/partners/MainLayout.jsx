@@ -6,7 +6,7 @@ import FilterBar from "./FilterBar";
 import ContextProvider from "./partnersContext";
 import { usePartnersContext } from "./partnersContext";
 const MainLayout = () => {
-  // const { filters, setFilters } = usePartnersContext();
+  const { filters, setFilters } = usePartnersContext();
   const partners = [
     {
       name: "Aaliyah Costin",
@@ -110,36 +110,35 @@ const MainLayout = () => {
     },
   ];
 
-  // const filterPartners = (partners, filters) => {
-  //   return partners.filter((partner) => {
-  //     // Check if all filter keys match the partner properties
-  //     return Object.entries(filters).every(([key, values]) => {
-  //       // If no values for the key, skip the filter
-  //       if (!values || values.length === 0) return true;
-  //       // Check if the partner's property value matches any value in the filter array
-  //       return values.includes(partner[key]);
-  //     });
-  //   });
-  // };
+  const filterPartners = (partners, filters) => {
+    return partners.filter((partner) => {
+      // Check if all filter keys match the partner properties
+      return Object.entries(filters).every(([key, values]) => {
+        // If no values for the key, skip the filter
+        console.log(key, values, "keys");
+        if (!values || values.length === 0) return true;
+        // Check if the partner's property value matches any value in the filter array
+        return values.includes(partner[key?.toLowerCase()]);
+      });
+    });
+  };
 
-  // // Filtered partners
-  // const filteredPartners = filterPartners(partners, filters);
+  // Filtered partners
+  const filteredPartners = filterPartners(partners, filters);
   return (
-    <ContextProvider>
-      <div className="flex h-screen overflow-hidden px-11 py-5">
-        <div className="flex-1 flex flex-col">
-          <TopBar />
-          <FilterBar />
-          <div className="p-4  overflow-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {partners.map((partner, index) => (
-                <PartnerCard key={index} {...partner} />
-              ))}
-            </div>
+    <div className="flex h-screen overflow-hidden px-11 py-5">
+      <div className="flex-1 flex flex-col">
+        <TopBar />
+        <FilterBar />
+        <div className="p-4  overflow-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {filteredPartners.map((partner, index) => (
+              <PartnerCard key={index} {...partner} />
+            ))}
           </div>
         </div>
       </div>
-    </ContextProvider>
+    </div>
   );
 };
 

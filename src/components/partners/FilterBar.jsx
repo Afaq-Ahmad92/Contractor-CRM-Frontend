@@ -40,22 +40,22 @@ const FiltersSection = () => {
   //   }
   // }
   const updateFilters = (event, filter, value) => {
-    console.log(event, filter, value, "values");
-    // setFilters((prev) => {
-    //   const currentValues = Array.isArray(prev[filter]) ? prev[filter] : [];
-    //   if (event === "add") {
-    //     return {
-    //       ...prev,
-    //       [filter]: [...currentValues, value], // Add the value
-    //     };
-    //   } else if (event === "remove") {
-    //     return {
-    //       ...prev,
-    //       [filter]: currentValues.filter((item) => item !== value), // Remove the value
-    //     };
-    //   }
-    //   return prev; // Fallback for unsupported events
-    // });
+    // console.log(event, filter, value, "values");
+    setFilters((prev) => {
+      const currentValues = Array.isArray(prev[filter]) ? prev[filter] : [];
+      if (event === "add") {
+        return {
+          ...prev,
+          [filter]: [...currentValues, value], // Add the value
+        };
+      } else if (event === "remove") {
+        return {
+          ...prev,
+          [filter]: currentValues.filter((item) => item !== value), // Remove the value
+        };
+      }
+      return prev; // Fallback for unsupported events
+    });
   };
 
   return (
