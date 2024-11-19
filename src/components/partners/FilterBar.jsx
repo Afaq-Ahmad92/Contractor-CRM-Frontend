@@ -7,6 +7,10 @@ import SaveIcon from "@mui/icons-material/Save";
 import SettingsIcon from "@mui/icons-material/Settings";
 import DropdownMenu from "../elements/filter";
 import { usePartnersContext } from "./partnersContext";
+import { Button, IconButton } from '@mui/material';
+import TuneIcon from '@mui/icons-material/Tune';
+import FilterListIcon from '@mui/icons-material/FilterList';
+import GridViewIcon from '@mui/icons-material/GridView';
 const FiltersSection = () => {
   const { setFilters } = usePartnersContext();
   const filters = [
@@ -119,6 +123,17 @@ const FiltersSection = () => {
           </>
         ))}
       </div>
+    <div className="flex space-x-2 items-center ml-auto">
+      <Button startIcon={<TuneIcon />} variant="text" color="primary" size="small" className="text-blue-600">
+      More filters...
+    </Button>
+      <IconButton>
+        <FilterListIcon />
+      </IconButton>
+      <IconButton>
+        <GridViewIcon />
+      </IconButton>
+    </div>
     </div>
   );
 };
