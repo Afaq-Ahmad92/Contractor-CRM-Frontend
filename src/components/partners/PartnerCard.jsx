@@ -125,7 +125,10 @@ const PartnerCard = ({
         className="group-hover:block hidden absolute top-3 right-3 text-[17px] text-gray-500 cursor-pointer"
         onClick={toggleMenu}
       />
-
+      <input
+        type="checkbox"
+        className=" w-[15px] h-[15px] group-hover:block hidden absolute top-3 left-3"
+       />
       {/* Options Menu */}
       {menu && (
         <div
