@@ -3,8 +3,6 @@ import React from "react";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
-import SaveIcon from "@mui/icons-material/Save";
-import SettingsIcon from "@mui/icons-material/Settings";
 import DropdownMenu from "../elements/filter";
 import { usePartnersContext } from "./partnersContext";
 import { Button, IconButton } from '@mui/material';

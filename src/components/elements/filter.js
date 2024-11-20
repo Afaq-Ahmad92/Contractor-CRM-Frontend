@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useStateContext } from "../../context/store";
 import { IoCloseOutline } from "react-icons/io5";
+import { IoMdArrowDropdown } from "react-icons/io";
+
+import TextField from "@mui/material/TextField";
+import InputAdornment from "@mui/material/InputAdornment";
+import SearchIcon from "@mui/icons-material/Search";
 function DropdownMenu({ name, options, onChange, value }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState([]);
@@ -41,7 +46,9 @@ function DropdownMenu({ name, options, onChange, value }) {
             />
           ))
         ) : (
-          <button className="p-2">{name}</button>
+          <button className="p-2 bg-light flex items-center gap-3 rounded">
+            {name} <IoMdArrowDropdown />
+          </button>
         )}
       </div>
       {isOpen && (
@@ -56,8 +63,24 @@ function DropdownMenu({ name, options, onChange, value }) {
             zIndex: "1000",
             width: "200px",
           }}
-          className={`ml-4`}
+          className={``}
         >
+          {/* <TextField
+            variant="outlined"
+            size="small"
+            placeholder="Search"
+            className="w-full "
+            // onChange={(e) =>
+            //   setFilters((pre) => ({ ...pre, name: e?.target?.value }))
+            // }
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon color="action" />
+                </InputAdornment>
+              ),
+            }}
+          /> */}
           {options?.map((option) => {
             return (
               <li className="px-3 py-2 flex items-center justify-between">

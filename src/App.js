@@ -73,7 +73,7 @@ const App = () => {
       <div className="flex">
         <>
           {/* Sidebar */}
-          {hasSidebar() && <Sidebar />}
+          {window.location.pathname !== "/login" && <Sidebar />}
 
           {/* Main Content */}
           <div className="flex-1">
