@@ -5,6 +5,7 @@ import PartnerCard from "./PartnerCard";
 import FilterBar from "./FilterBar";
 
 const MainLayout = () => {
+
   const partners = [
     {
       name: "Aaliyah Costin",

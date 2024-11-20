@@ -11,8 +11,10 @@ import { Button, IconButton } from '@mui/material';
 import TuneIcon from '@mui/icons-material/Tune';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import GridViewIcon from '@mui/icons-material/GridView';
+import { useState } from "react";
 const FiltersSection = () => {
-  const { setFilters } = usePartnersContext();
+  const { setFilters , setView, view} = usePartnersContext();
+  
   const filters = [
     {
       name: "Status",
@@ -127,10 +129,17 @@ const FiltersSection = () => {
       <Button startIcon={<TuneIcon />} variant="text" color="primary" size="small" className="text-blue-600">
       More filters...
     </Button>
-      <IconButton>
+      <IconButton onClick={() => {
+        setView('list')
+        console.log("This view is= ", view)
+        }}
+          style={{ marginRight: '10px' }}>
         <FilterListIcon />
       </IconButton>
-      <IconButton>
+      <IconButton onClick={() =>{ 
+        setView('grid')
+        console.log("This view is= ", view)
+        }}>
         <GridViewIcon />
       </IconButton>
     </div>

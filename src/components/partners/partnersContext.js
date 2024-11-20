@@ -3,10 +3,13 @@ const storeContext = createContext();
 
 export default function ContextProvider({ children }) {
   const [filters, setFilters] = useState({});
+  const [view, setView] = useState('grid');
 
   const stats = {
     filters,
     setFilters,
+    view,
+    setView,
   };
 
   return (

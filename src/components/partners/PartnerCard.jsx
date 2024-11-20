@@ -20,7 +20,7 @@ import AddTaskIcon from "@mui/icons-material/AddTask";
 import DraftsIcon from "@mui/icons-material/Drafts";
 import SendIcon from "@mui/icons-material/Send";
 import ShareIcon from "@mui/icons-material/Share";
-
+import { usePartnersContext } from "./partnersContext";
 const PartnerCard = ({
   name,
   email,
@@ -30,6 +30,7 @@ const PartnerCard = ({
   rating,
   statusIcon,
 }) => {
+  const {view} = usePartnersContext();
   const [menu, setMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -159,3 +160,5 @@ const PartnerCard = ({
 };
 
 export default PartnerCard;
+
+
