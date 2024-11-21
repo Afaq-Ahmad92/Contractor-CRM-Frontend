@@ -289,7 +289,9 @@ const MainLayout = () => {
         <TopBar />
         <FilterBar />
         <div className="p-4  overflow-auto">
-          {view === "grid" ? (
+          {filteredPartners?.length == 0 ? (
+            <div className="text-center">No Record Found</div>
+          ) : view === "grid" ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {filteredPartners.map((partner, index) => (
                 <PartnerCard key={index} {...partner} />
