@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useApi from "../utils/useApi";
 import { useStateContext } from "../context/store";
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { setIsSidebar } = useStateContext();
   const { fetchData } = useApi();
   const navigate = useNavigate();
 
@@ -21,6 +22,10 @@ const LoginPage = () => {
       }
     );
   };
+
+  useEffect(() => {
+    setIsSidebar(false);
+  }, []);
 
   return (
     <div className="flex w-full items-center justify-center min-h-screen bg-orange-500">
