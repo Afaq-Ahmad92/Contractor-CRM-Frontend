@@ -2,6 +2,7 @@ import { createContext, useContext, useState } from "react";
 const storeContext = createContext();
 
 export default function ContextProvider({ children }) {
+  const [isSidebar, setIsSidebar] = useState(false);
   const [theme, setTheme] = useState({
     primaryColor: "#C2410C",
     secondary: "#1E40AF",
@@ -11,6 +12,8 @@ export default function ContextProvider({ children }) {
   const stats = {
     theme,
     setTheme,
+    isSidebar,
+    setIsSidebar,
   };
 
   return (

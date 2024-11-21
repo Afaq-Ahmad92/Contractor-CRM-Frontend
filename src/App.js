@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -17,13 +17,11 @@ import SupportPage from "./pages/SupportPage";
 import LoginPage from "./pages/LoginPage";
 import "./index.css";
 import { useStateContext } from "./context/store";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
-  const hasSidebar = () => {
-    const pathname = window.location.pathname;
-    console.log(pathname, "pathname");
-    return pathname !== "/login";
-  };
+  const { isSidebar } = useStateContext();
 
   const pages = [
     {
@@ -73,7 +71,7 @@ const App = () => {
       <div className="flex">
         <>
           {/* Sidebar */}
-          {window.location.pathname !== "/login" && <Sidebar />}
+          {isSidebar && <Sidebar />}
 
           {/* Main Content */}
           <div className="flex-1">
@@ -84,6 +82,14 @@ const App = () => {
             </Routes>
           </div>
         </>
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          closeButton={true}
+          newestOnTop
+          rtl={false}
+        />
       </div>
     </Router>
   );

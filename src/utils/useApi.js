@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useStateContext } from "../context/store";
+import { toast } from "react-toastify";
 const baseUrl = process.env.REACT_APP_BASE_URL;
 
 const useApi = () => {
@@ -33,6 +33,8 @@ const useApi = () => {
       console.log(err.response);
       if (err.response?.data.message === "unauthenticated") {
         navigate("/login");
+      } else if (err.response?.data.message) {
+        toast.error(err.response?.data.message);
       }
     }
 
