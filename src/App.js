@@ -68,13 +68,13 @@ const App = () => {
 
   return (
     <Router>
-      <div className="flex">
+      <div className="flex max-w-[100vw]">
         <>
           {/* Sidebar */}
           {isSidebar && <Sidebar />}
 
           {/* Main Content */}
-          <div className="flex-1">
+          <div className="flex-1 max-w-[83vw]">
             <Routes>
               {pages?.map((page) => (
                 <Route path={page?.path} element={page?.element} />

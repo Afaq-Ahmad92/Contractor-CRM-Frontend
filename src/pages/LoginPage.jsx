@@ -9,7 +9,8 @@ const LoginPage = () => {
   const { fetchData } = useApi();
   const navigate = useNavigate();
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e?.preventDefault();
     fetchData(
       "/api/user/login",
       {
@@ -29,7 +30,10 @@ const LoginPage = () => {
 
   return (
     <div className="flex w-full items-center justify-center min-h-screen bg-orange-500">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+      <form
+        onSubmit={handleLogin}
+        className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
+      >
         <div className="text-center mb-6">
           <h1 className="text-2xl font-semibold">Login to Contractor CRM</h1>
         </div>
@@ -57,7 +61,7 @@ const LoginPage = () => {
           className="w-full p-3 border rounded mb-4"
         />
         <button
-          onClick={handleLogin}
+          type="submit"
           className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
         >
           Login with Email
@@ -72,7 +76,7 @@ const LoginPage = () => {
             Email me a secure login
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

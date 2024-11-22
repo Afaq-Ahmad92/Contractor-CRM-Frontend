@@ -5,14 +5,14 @@ import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import DropdownMenu from "../elements/filter";
 import { usePartnersContext } from "./partnersContext";
-import { Button, IconButton } from '@mui/material';
-import TuneIcon from '@mui/icons-material/Tune';
-import FilterListIcon from '@mui/icons-material/FilterList';
-import GridViewIcon from '@mui/icons-material/GridView';
+import { Button, IconButton } from "@mui/material";
+import TuneIcon from "@mui/icons-material/Tune";
+import FilterListIcon from "@mui/icons-material/FilterList";
+import GridViewIcon from "@mui/icons-material/GridView";
 import { useState } from "react";
 const FiltersSection = () => {
-  const { setFilters , setView, view} = usePartnersContext();
-  
+  const { setFilters, setView, view } = usePartnersContext();
+
   const filters = [
     {
       name: "Status",
@@ -111,7 +111,7 @@ const FiltersSection = () => {
   return (
     <div className="flex flex-wrap items-center p-4 rounded-lg ">
       {/* Filter Dropdowns */}
-      <div className="flex flex-wrap space-y-2 md:space-y-0 md:space-x-2  max-w-fit  overflow-y-visible">
+      <div className="flex flex-wrap gap-y-3 gap-x-3">
         {filters.map((filter, index) => (
           <>
             <DropdownMenu
@@ -123,24 +123,34 @@ const FiltersSection = () => {
           </>
         ))}
       </div>
-    <div className="flex space-x-2 items-center ml-auto">
-      <Button startIcon={<TuneIcon />} variant="text" color="primary" size="small" className="text-blue-600">
-      More filters...
-    </Button>
-      <IconButton onClick={() => {
-        setView('list')
-        console.log("This view is= ", view)
-        }}
-          style={{ marginRight: '10px' }}>
-        <FilterListIcon />
-      </IconButton>
-      <IconButton onClick={() =>{ 
-        setView('grid')
-        console.log("This view is= ", view)
-        }}>
-        <GridViewIcon />
-      </IconButton>
-    </div>
+      <div className="flex space-x-2 items-center ml-auto">
+        <Button
+          startIcon={<TuneIcon />}
+          variant="text"
+          color="primary"
+          size="small"
+          className="text-blue-600"
+        >
+          More filters...
+        </Button>
+        <IconButton
+          onClick={() => {
+            setView("list");
+            console.log("This view is= ", view);
+          }}
+          style={{ marginRight: "10px" }}
+        >
+          <FilterListIcon />
+        </IconButton>
+        <IconButton
+          onClick={() => {
+            setView("grid");
+            console.log("This view is= ", view);
+          }}
+        >
+          <GridViewIcon />
+        </IconButton>
+      </div>
     </div>
   );
 };

@@ -166,7 +166,7 @@ const MainLayout = () => {
     {
       headerName: "Partner",
       accessor: "name",
-      headerClassName: "font-fold  min-w-[10px] text-left pl-4 py-2 bg-light ",
+      headerClassName: "font-fold  min-w-[200px] text-left pl-4 py-2 bg-light ",
       cellClassName: "pl-4",
       renderCell: (params) => {
         return (
@@ -256,6 +256,58 @@ const MainLayout = () => {
         );
       },
     },
+    {
+      headerName: "Email",
+      accessor: "email",
+      headerClassName: "font-fold  min-w-[200px] text-left bg-light",
+      cellClassName: "",
+      renderCell: (params) => {
+        return (
+          <div className="">
+            <div className="">{params?.value}</div>
+          </div>
+        );
+      },
+    },
+    {
+      headerName: "Email",
+      accessor: "email",
+      headerClassName: "font-fold  min-w-[200px] text-left bg-light",
+      cellClassName: "",
+      renderCell: (params) => {
+        return (
+          <div className="">
+            <div className="">{params?.value}</div>
+          </div>
+        );
+      },
+    },
+    {
+      headerName: "Email",
+      accessor: "email",
+      headerClassName: "font-fold  min-w-[200px] text-left bg-light",
+      cellClassName: "",
+      renderCell: (params) => {
+        return (
+          <div className="">
+            <div className="">{params?.value}</div>
+          </div>
+        );
+      },
+    },
+    {
+      headerName: "Email",
+      accessor: "email",
+      headerClassName: "font-fold  min-w-[200px] text-left bg-light",
+      cellClassName: "",
+      renderCell: (params) => {
+        return (
+          <div className="">
+            <div className="">{params?.value}</div>
+          </div>
+        );
+      },
+    },
   ];
   const filterPartners = (partners, filters) => {
     return partners.filter((partner) => {
@@ -284,21 +336,23 @@ const MainLayout = () => {
   // Filtered partners
   const filteredPartners = filterPartners(partners, filters);
   return (
-    <div className="flex h-screen overflow-hidden px-11 py-5">
-      <div className="flex-1 flex flex-col">
+    <div className="flex h-screen  sm:px-11 px-5 py-5 max-w-full overflow-scroll">
+      <div className=" flex flex-col overflow-scroll">
         <TopBar />
         <FilterBar />
         <div className="p-4  overflow-auto">
           {filteredPartners?.length == 0 ? (
             <div className="text-center">No Record Found</div>
           ) : view === "grid" ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {filteredPartners.map((partner, index) => (
                 <PartnerCard key={index} {...partner} />
               ))}
             </div>
           ) : (
-            <Table columns={columns} rows={filteredPartners} />
+            <div className=" max-w-full">
+              <Table columns={columns} rows={filteredPartners} />
+            </div>
           )}
         </div>
       </div>

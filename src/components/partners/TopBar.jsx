@@ -5,9 +5,9 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 const TopBar = () => {
   return (
-    <div className="flex justify-between items-center select-none  w-full">
+    <div className="flex sm:flex-row flex-col justify-between sm:items-center select-none gap-4  w-full">
       <h1 className="text-3xl font-medium tracking-wide">All Partners</h1>
-      <div className="flex space-x-4 items-center">
+      <div className="flex space-x-4 items-center sm:justify-normal  justify-end">
         <button className="bg-blue-600 border-blue-600 hover:bg-white hover:text-blue-600 transition-all duration-200 text-white px-4  py-[6px]  rounded-[25px] text-[14px] font-semibold font-sans border-[0.5px]  flex items-center   ">
           Add Partner
         </button>
